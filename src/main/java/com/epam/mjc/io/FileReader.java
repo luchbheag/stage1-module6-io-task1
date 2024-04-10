@@ -2,7 +2,6 @@ package com.epam.mjc.io;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
@@ -20,9 +19,9 @@ public class FileReader {
         }
         String[] pairsOfData = sb.toString().split("\n");
         String name = getValueFromPair(pairsOfData[0]);
-        int age = Integer.valueOf(getValueFromPair(pairsOfData[1]));
+        int age = Integer.parseInt(getValueFromPair(pairsOfData[1]));
         String email = getValueFromPair(pairsOfData[2]);
-        long phone = Long.valueOf(getValueFromPair(pairsOfData[3]));
+        long phone = Long.parseLong(getValueFromPair(pairsOfData[3]));
 
         return new Profile(name, age, email, phone);
     }
